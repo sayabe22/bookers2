@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -9,7 +10,8 @@ class UsersController < ApplicationController
   end
   
   private
-  def user
-        params.require(:user).permit(:title, :body, :image)
+  def user_params
+    params.require(:user).permit(:title, :body, :image)
   end 
+  
 end
